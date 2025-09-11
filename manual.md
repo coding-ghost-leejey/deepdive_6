@@ -1,5 +1,5 @@
 # Figma SmartAnimation Design '#' 1개 ~ 6개까지 가능, 6개가 가장 작은제목
-
+ 
 - 마크다운으로 이미지 넣는방법 ![대체텍스트](이미지경로)
   ![test image](./images/icon/home.svg)
 
@@ -21,6 +21,7 @@ _기울임_
 ### 링크넣기
 
 [링크자료](https://www.naver.com)
+
 
 ### 이미지넣기
 
