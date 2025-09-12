@@ -150,6 +150,8 @@ body {
   font-family: inherit;
   transition: border-color 0.2s ease;
   background: #ffffff;
+  height: 48px;
+  box-sizing: border-box;
 }
 
 .text-input:focus,
@@ -161,6 +163,7 @@ body {
 
 .textarea-input {
   min-height: 100px;
+  height: auto;
   resize: vertical;
 }
 
@@ -190,19 +193,27 @@ body {
 .date-input,
 .version-input,
 .author-input,
-.change-input {
-  padding: 8px 12px;
+.change-input,
+.milestone-input {
+  padding: 12px 16px;
   border: 2px solid #e5e5e5;
-  border-radius: 6px;
-  font-size: 0.9em;
+  border-radius: 8px;
+  font-size: 1em;
+  height: 48px;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  background: #ffffff;
 }
 
 .date-input:focus,
 .version-input:focus,
 .author-input:focus,
-.change-input:focus {
+.change-input:focus,
+.milestone-input:focus {
   outline: none;
   border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
 }
 
 .criteria-grid {
@@ -286,11 +297,15 @@ body {
 
 .priority-select,
 .req-type-select {
-  padding: 8px 12px;
+  padding: 12px 16px;
   border: 2px solid #e5e5e5;
-  border-radius: 6px;
-  font-size: 0.9em;
+  border-radius: 8px;
+  font-size: 1em;
   background: #ffffff;
+  height: 48px;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
 }
 
 .priority-select:focus,
@@ -379,6 +394,63 @@ body {
 
 .footer p {
   margin: 0;
+}
+
+/* 디자인 링크 스타일 */
+.design-links-container {
+  margin-bottom: 15px;
+}
+
+.design-link-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+.design-link-item .text-input,
+.design-link-item .url-input {
+  height: 48px;
+  padding: 12px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.design-link-item .text-input:focus,
+.design-link-item .url-input:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.1);
+}
+
+.design-link-item .text-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.design-link-item .url-input {
+  flex: 2;
+  min-width: 300px;
+}
+
+.design-link-item .add-btn {
+  padding: 12px 16px;
+  font-size: 1em;
+  min-width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
 }
 
 /* 위로 가기 버튼 */

@@ -392,10 +392,25 @@
                     <li>UI/UX 디자인 가이드라인</li>
                     <li>디자인 시스템 및 컴포넌트</li>
                     <li>사용자 경험을 위한 디자인 원칙</li>
+                    <li>Notion, Figma 등 디자인 리소스 링크</li>
                 </ul>
             </div>
             <div class="input-area">
-                <textarea placeholder="디자인 가이드라인과 원칙을 설명하세요..." class="textarea-input"></textarea>
+                <div class="subsection">
+                    <h3>디자인 가이드라인</h3>
+                    <textarea placeholder="디자인 가이드라인과 원칙을 설명하세요..." class="textarea-input"></textarea>
+                </div>
+                <div class="subsection">
+                    <h3>디자인 리소스</h3>
+                    <div class="design-links-container">
+                        <div class="design-link-item">
+                            <input type="text" placeholder="리소스 이름 (예: Figma 디자인 시스템)" class="text-input">
+                            <input type="url" placeholder="https://figma.com/..." class="url-input">
+                            <button class="add-btn" onclick="addDesignLink()">+</button>
+                        </div>
+                    </div>
+                    <button class="add-btn" onclick="addDesignLink()">+ 리소스 추가</button>
+                </div>
             </div>
         </div>
 

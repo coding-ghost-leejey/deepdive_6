@@ -240,6 +240,7 @@ function collectPRDData() {
     document.querySelector(
       'textarea[placeholder="디자인 가이드라인과 원칙을 설명하세요..."]'
     )?.value || "";
+  data.designLinks = collectDesignLinks();
   data.otherConsiderations =
     document.querySelector(
       'textarea[placeholder="기타 고려해야 할 사항들을 나열하세요..."]'
@@ -671,7 +672,28 @@ function generateHTML(data) {
     
     <div class="section">
         <h2>Designs</h2>
-        <p>${data.designs || "Not specified"}</p>
+        <div class="subsection">
+            <h3>디자인 가이드라인</h3>
+            <p>${data.designs || "Not specified"}</p>
+        </div>
+        ${
+          data.designLinks && data.designLinks.length > 0
+            ? `
+        <div class="subsection">
+            <h3>디자인 리소스</h3>
+            <ul>
+                ${data.designLinks
+                  .map(
+                    (link) => `
+                    <li><a href="${link.url}" target="_blank">${link.name}</a></li>
+                `
+                  )
+                  .join("")}
+            </ul>
+        </div>
+        `
+            : ""
+        }
     </div>
     
     <div class="section">
@@ -740,6 +762,18 @@ function resetPRD() {
       ".qa-container",
     ];
 
+    // 디자인 링크 제거 (첫 번째 아이템 제외)
+    const designLinkItems = document.querySelectorAll(".design-link-item");
+    designLinkItems.forEach((item, index) => {
+      if (index > 0) {
+        item.remove();
+      } else {
+        // 첫 번째 아이템의 입력값만 초기화
+        const inputs = item.querySelectorAll("input");
+        inputs.forEach((input) => (input.value = ""));
+      }
+    });
+
     dynamicContainers.forEach((selector) => {
       const container = document.querySelector(selector);
       if (container) {
@@ -805,6 +839,49 @@ document.addEventListener("keydown", function (e) {
     resetPRD();
   }
 });
+
+// 디자인 링크 추가
+function addDesignLink() {
+  const container = document.querySelector(".design-links-container");
+  const newItem = document.createElement("div");
+  newItem.className = "design-link-item";
+  newItem.innerHTML = `
+    <input type="text" placeholder="리소스 이름 (예: Figma 디자인 시스템)" class="text-input">
+    <input type="url" placeholder="https://figma.com/..." class="url-input">
+    <button class="add-btn" onclick="removeDesignLink(this)">-</button>
+  `;
+  container.appendChild(newItem);
+}
+
+// 디자인 링크 제거
+function removeDesignLink(button) {
+  const item = button.parentElement;
+  item.remove();
+}
+
+// 디자인 링크 수집
+function collectDesignLinks() {
+  const links = [];
+  const linkItems = document.querySelectorAll(".design-link-item");
+
+  linkItems.forEach((item) => {
+    const nameInput = item.querySelector('input[type="text"]');
+    const urlInput = item.querySelector('input[type="url"]');
+
+    if (
+      nameInput &&
+      urlInput &&
+      (nameInput.value.trim() || urlInput.value.trim())
+    ) {
+      links.push({
+        name: nameInput.value.trim(),
+        url: urlInput.value.trim(),
+      });
+    }
+  });
+
+  return links;
+}
 
 // 위로 가기 함수
 function scrollToTop() {
