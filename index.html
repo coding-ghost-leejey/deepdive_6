@@ -1,20 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejey</title>
+    <title>PRD Template - GitHub Pages</title>
     <style>
         body {
-            background-color: tomato;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
             color: white;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+
+        .btn-secondary:hover {
+            background: #1a1a1a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .features {
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .features h3 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .feature-item h4 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>Ejey Home</h1>
+    <div class="container">
+        <h1>PRD Template</h1>
+        <p>Product Requirements Document를 쉽고 체계적으로 작성할 수 있는 템플릿입니다.</p>
+
+        <div class="button-group">
+            <a href="prd/prd_template.html" class="btn btn-primary">PRD 템플릿 시작</a>
+            <a href="quiz_1.html" class="btn btn-secondary">디자인씽킹 퀴즈</a>
+        </div>
+
+        <div class="features">
+            <h3>주요 기능</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h4>📝 체계적인 PRD 작성</h4>
+                    <p>모든 필요한 섹션을 포함한 완전한 PRD 템플릿</p>
+                </div>
+                <div class="feature-item">
+                    <h4>💾 자동 저장</h4>
+                    <p>작성 중인 내용을 자동으로 로컬에 저장</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📄 PDF 내보내기</h4>
+                    <p>완성된 PRD를 PDF 파일로 다운로드</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎯 디자인씽킹 퀴즈</h4>
+                    <p>공감과 문제정의 단계 학습을 위한 퀴즈</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

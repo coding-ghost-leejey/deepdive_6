@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRD 템플릿 - Product Requirements Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/prd_template.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PRD 템플릿</h1>
+            <p>Product Requirements Document 작성 가이드</p>
+            <div class="header-actions">
+                <button class="save-btn" onclick="savePRD()">JSON 파일로 저장</button>
+                <button class="export-btn" onclick="exportPRD()">HTML 내보내기</button>
+                <button class="reset-btn" onclick="resetPRD()">초기화</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Title</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>이 프로젝트의 이름</strong></p>
+                <ul>
+                    <li>프로젝트의 핵심을 담은 명확하고 간결한 제목</li>
+                    <li>팀원들이 쉽게 기억하고 참조할 수 있는 이름</li>
+                    <li>예: "스마트 분리수거 가이드 앱", "AI 기반 개인화 추천 시스템"</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <input type="text" placeholder="프로젝트 이름을 입력하세요" class="text-input">
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Change History</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>변경 이력 관리</strong></p>
+                <ul>
+                    <li>문서의 버전별 변경 사항을 추적</li>
+                    <li>날짜, 버전, 변경자, 변경 내용을 기록</li>
+                    <li>팀원들이 최신 변경사항을 쉽게 파악할 수 있도록 도움</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="history-item">
+                    <input type="date" class="date-input">
+                    <input type="text" placeholder="버전 (예: v1.0)" class="version-input">
+                    <input type="text" placeholder="변경자" class="author-input">
+                    <input type="text" placeholder="변경 내용" class="change-input">
+                    <button class="add-btn" onclick="addHistoryItem()">+</button>
+                </div>
+                <div id="history-list"></div>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Overview</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>프로젝트 개요</strong></p>
+                <ul>
+                    <li><strong>Problem Statement:</strong> 해결하고자 하는 문제를 명확히 정의</li>
+                    <li><strong>Proposed Work:</strong> 제안하는 해결책과 접근 방법</li>
+                    <li>프로젝트의 목적과 방향성을 이해할 수 있도록 작성</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="subsection">
+                    <h3>Problem Statement</h3>
+                    <textarea placeholder="해결하고자 하는 문제를 명확히 정의하세요..." class="textarea-input"></textarea>
+                </div>
+                <div class="subsection">
+                    <h3>Proposed Work</h3>
+                    <textarea placeholder="제안하는 해결책과 접근 방법을 설명하세요..." class="textarea-input"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Dependencies & Risks</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>의존성 및 위험 요소</strong></p>
+                <ul>
+                    <li><strong>Stake Holders:</strong> 프로젝트에 영향을 미치는 이해관계자들</li>
+                    <li><strong>Risks:</strong> 프로젝트 성공을 방해할 수 있는 위험 요소들</li>
+                    <li><strong>Dependencies:</strong> 프로젝트가 의존하는 외부 요소들</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="subsection">
+                    <h3>Stake Holders</h3>
+                    <textarea placeholder="프로젝트에 영향을 미치는 이해관계자들을 나열하세요..." class="textarea-input"></textarea>
+                </div>
+                <div class="subsection">
+                    <h3>Risks</h3>
+                    <textarea placeholder="프로젝트 성공을 방해할 수 있는 위험 요소들을 식별하세요..." class="textarea-input"></textarea>
+                </div>
+                <div class="subsection">
+                    <h3>Dependencies (cross check)</h3>
+                    <textarea placeholder="프로젝트가 의존하는 외부 요소들을 확인하세요..." class="textarea-input"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Success Criteria</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>성공 기준</strong></p>
+                <ul>
+                    <li>프로젝트가 성공했다고 판단할 수 있는 명확한 기준</li>
+                    <li><strong>SMART 기준:</strong> Specific, Measurable, Achievable, Relevant, Time-bound</li>
+                    <li>정량적 지표와 정성적 목표를 모두 포함</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="criteria-grid">
+                    <div class="criteria-item">
+                        <h4>Specific (구체적)</h4>
+                        <textarea placeholder="구체적인 목표를 설정하세요..." class="textarea-input"></textarea>
+                    </div>
+                    <div class="criteria-item">
+                        <h4>Measurable (측정 가능)</h4>
+                        <textarea placeholder="측정 가능한 지표를 정의하세요..." class="textarea-input"></textarea>
+                    </div>
+                    <div class="criteria-item">
+                        <h4>Achievable (달성 가능)</h4>
+                        <textarea placeholder="현실적으로 달성 가능한 목표를 설정하세요..." class="textarea-input"></textarea>
+                    </div>
+                    <div class="criteria-item">
+                        <h4>Relevant (관련성)</h4>
+                        <textarea placeholder="비즈니스 목표와 관련된 목표를 설정하세요..." class="textarea-input"></textarea>
+                    </div>
+                    <div class="criteria-item">
+                        <h4>Time-bound (시간 제한)</h4>
+                        <textarea placeholder="명확한 시간 프레임을 설정하세요..." class="textarea-input"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Messaging</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>메시징 전략</strong></p>
+                <ul>
+                    <li>사용자에게 전달할 핵심 메시지</li>
+                    <li>제품의 가치 제안과 차별화 포인트</li>
+                    <li>마케팅 및 커뮤니케이션 전략의 기반</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <textarea placeholder="사용자에게 전달할 핵심 메시지를 작성하세요..." class="textarea-input"></textarea>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Timeline/Release Planning</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>타임라인 및 릴리스 계획</strong></p>
+                <ul>
+                    <li>프로젝트의 주요 마일스톤과 일정</li>
+                    <li>릴리스 단계별 계획</li>
+                    <li>의존성과 리소스를 고려한 현실적인 일정</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <input type="date" class="date-input">
+                        <input type="text" placeholder="마일스톤 이름" class="milestone-input">
+                        <textarea placeholder="설명" class="textarea-input small"></textarea>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addTimelineItem()">+ 마일스톤 추가</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Personas</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>사용자 페르소나</strong></p>
+                <ul>
+                    <li>타겟 사용자의 구체적인 프로필</li>
+                    <li>사용자의 니즈, 목표, 행동 패턴</li>
+                    <li>제품 개발 방향을 결정하는 중요한 가이드</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="persona-container">
+                    <div class="persona-item">
+                        <input type="text" placeholder="페르소나 이름" class="text-input">
+                        <textarea placeholder="페르소나 설명 (나이, 직업, 니즈, 목표 등)" class="textarea-input"></textarea>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addPersona()">+ 페르소나 추가</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>User Scenarios</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>사용자 시나리오</strong></p>
+                <ul>
+                    <li>사용자가 제품을 사용하는 구체적인 상황</li>
+                    <li>사용자의 목표와 행동 과정을 단계별로 설명</li>
+                    <li>기능 요구사항 도출의 기반이 되는 자료</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="scenario-container">
+                    <div class="scenario-item">
+                        <input type="text" placeholder="시나리오 제목" class="text-input">
+                        <textarea placeholder="사용자 시나리오를 단계별로 설명하세요..." class="textarea-input"></textarea>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addScenario()">+ 시나리오 추가</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>User Stories</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>사용자 스토리</strong></p>
+                <ul>
+                    <li>"As a [사용자], I want [기능], so that [목적]" 형식</li>
+                    <li>사용자의 관점에서 기능의 필요성을 명확히 표현</li>
+                    <li>개발팀이 이해하기 쉬운 요구사항 정의</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="story-container">
+                    <div class="story-item">
+                        <textarea placeholder="As a [사용자], I want [기능], so that [목적]" class="textarea-input"></textarea>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addStory()">+ 스토리 추가</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Features In</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>포함 기능</strong></p>
+                <ul>
+                    <li>이번 릴리스에 포함될 기능들</li>
+                    <li>우선순위가 높은 핵심 기능들</li>
+                    <li>사용자에게 제공할 가치를 명확히 정의</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="feature-container">
+                    <div class="feature-item">
+                        <input type="text" placeholder="기능 이름" class="text-input">
+                        <textarea placeholder="기능 설명" class="textarea-input small"></textarea>
+                        <select class="priority-select">
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addFeature('in')">+ 기능 추가</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Requirements</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>요구사항</strong></p>
+                <ul>
+                    <li>기능적 요구사항 (Functional Requirements)</li>
+                    <li>비기능적 요구사항 (Non-functional Requirements)</li>
+                    <li>성능, 보안, 사용성 등 구체적인 기준</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="requirements-container">
+                    <div class="requirement-item">
+                        <select class="req-type-select">
+                            <option value="functional">기능적 요구사항</option>
+                            <option value="non-functional">비기능적 요구사항</option>
+                        </select>
+                        <textarea placeholder="요구사항을 구체적으로 설명하세요..." class="textarea-input"></textarea>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addRequirement()">+ 요구사항 추가</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Features Out</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>제외 기능</strong></p>
+                <ul>
+                    <li>이번 릴리스에 포함하지 않을 기능들</li>
+                    <li>미래 릴리스로 연기된 기능들</li>
+                    <li>명확한 범위 설정을 위한 중요한 요소</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="feature-container">
+                    <div class="feature-item">
+                        <input type="text" placeholder="기능 이름" class="text-input">
+                        <textarea placeholder="제외 이유" class="textarea-input small"></textarea>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addFeature('out')">+ 제외 기능 추가</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Designs</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>디자인</strong></p>
+                <ul>
+                    <li>UI/UX 디자인 가이드라인</li>
+                    <li>디자인 시스템 및 컴포넌트</li>
+                    <li>사용자 경험을 위한 디자인 원칙</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <textarea placeholder="디자인 가이드라인과 원칙을 설명하세요..." class="textarea-input"></textarea>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Q & A</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>질문과 답변</strong></p>
+                <ul>
+                    <li>프로젝트에 대한 자주 묻는 질문들</li>
+                    <li>팀원들이 가질 수 있는 의문점들</li>
+                    <li>명확한 답변을 통해 혼란을 방지</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <div class="qa-container">
+                    <div class="qa-item">
+                        <input type="text" placeholder="질문" class="text-input">
+                        <textarea placeholder="답변" class="textarea-input small"></textarea>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addQA()">+ Q&A 추가</button>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Other Considerations</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>기타 고려사항</strong></p>
+                <ul>
+                    <li>법적, 윤리적, 사회적 고려사항</li>
+                    <li>접근성, 다국어 지원 등</li>
+                    <li>프로젝트에 영향을 미칠 수 있는 기타 요소들</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <textarea placeholder="기타 고려해야 할 사항들을 나열하세요..." class="textarea-input"></textarea>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>No-gos</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>금지사항</strong></p>
+                <ul>
+                    <li>절대 하지 않아야 할 것들</li>
+                    <li>제약사항과 한계점</li>
+                    <li>명확한 경계를 설정하여 혼란 방지</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <textarea placeholder="절대 하지 않아야 할 것들을 명시하세요..." class="textarea-input"></textarea>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <div class="section-header">
+                <h2>Post Launch Plan</h2>
+                <div class="help-tooltip" onclick="toggleHelp(this)">
+                    <span class="help-icon">?</span>
+                </div>
+            </div>
+            <div class="help-content">
+                <p><strong>출시 후 계획</strong></p>
+                <ul>
+                    <li>출시 후 모니터링 및 개선 계획</li>
+                    <li>사용자 피드백 수집 방법</li>
+                    <li>향후 업데이트 및 확장 계획</li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <textarea placeholder="출시 후 계획을 상세히 설명하세요..." class="textarea-input"></textarea>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="save-btn" onclick="savePRD()">JSON 파일로 저장</button>
+            <button class="export-btn" onclick="exportPRD()">HTML 내보내기</button>
+            <button class="reset-btn" onclick="resetPRD()">초기화</button>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2017 <a href="https://blackcrown.io/" target="_blank">coding-ghost</a>. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- 위로 가기 버튼 -->
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()" title="맨 위로">
+        ↑
+    </button>
+
+    <script src="js/prd_template.js"></script>
+</body>
+
+</html>
