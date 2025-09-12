@@ -2,7 +2,7 @@
 
 ## PRD-Template
 
-PRE 템플릿 보기 - [View Page](https://coding-ghost-leejey.github.io/deepdive_6/prd/prd_template.html);
+PRE 템플릿 보기 - [View Page](https://coding-ghost-leejey.github.io/deepdive_6/prd/prd_template.html)
 
 ## PRD-Sample
 
