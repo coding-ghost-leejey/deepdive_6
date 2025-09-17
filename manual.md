@@ -1,5 +1,5 @@
 # Figma SmartAnimation Design '#' 1개 ~ 6개까지 가능, 6개가 가장 작은제목
- 
+
 - 마크다운으로 이미지 넣는방법 ![대체텍스트](이미지경로)
   ![test image](./images/icon/home.svg)
 
@@ -21,7 +21,6 @@ _기울임_
 ### 링크넣기
 
 [링크자료](https://www.naver.com)
-
 
 ### 이미지넣기
 
@@ -88,6 +87,12 @@ _기울임_
 
 `git push origin main`
 `git push -u origin main` -> 이다음번에는 `git push` 만 하면됨.
+
+## add와 commit을 같이하기
+
+`git commit -am 'message'`
+
+- am을 할때에는 새 파일은 제외된다.(추적중인 파일만 커밋됨)
 
 ## 방금 스테이징 한것을 취소하기(add 한것취소하기)
 
