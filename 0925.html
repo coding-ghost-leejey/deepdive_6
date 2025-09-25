@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업띄우기</title>
+    <script src="https://kit.fontawesome.com/898d462de4.js" crossorigin="anonymous"></script>
+    <style>
+        /* reset */
+        * {
+            /* '*' 아스테리스크 기호 -> 전체선택자 모든 html태그를 선택 */
+            margin: 0;
+            /* 요소의 바깥여백 */
+            padding: 0;
+            /* 요소의 안쪽여백 */
+            box-sizing: border-box;
+        }
+
+        .open-popup {
+            padding: 10px;
+        }
+
+        .popup-container {
+            width: 350px;
+            height: 200px;
+            border: 2px dashed teal;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 128, 128, 0.3);
+            padding: 30px;
+            position: fixed;
+            right: 50px;
+            top: 100px;
+            display: none;
+            /*  화면에서 숨기기 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DEEP DIVE</h1>
+    <button type="button" class="open-popup">
+        레이어팝업 열기
+    </button>
+    <section class="popup-container">
+        <h2>Popup Title</h2>
+        <div class="contents">
+            여기에는 팝업내용이 들어옵니다.
+        </div>
+
+        <button type="button" class="close-popup">
+            <span>팝업창 닫기</span>
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </section>
+
+    <script>
+        /* 
+        
+        1. 팝업띄우기
+            .open-popup 버튼을 클릭(EVENT)하면, .popup-container 요소를
+            화면에 보이게 변경할거야 
+        
+        2. 팝업닫기
+            .close-popup 버튼을 클릭하면, .popup-container 요소를
+            화면에서 숨길거야.
+        */
+
+        const openBtn = document.querySelector('.open-popup');
+        const popup = document.querySelector('.popup-container')
+        const closeBtn = document.querySelector('.close-popup')
+
+        openBtn.addEventListener('click', () => {
+            popup.style.display = "block"
+            openBtn.style.backgroundColor = 'olive'
+            openBtn.style.color = 'white'
+        })
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = "none";
+            openBtn.style.backgroundColor = '#f3f3f3'
+            openBtn.style.color = 'black'
+        })
+    </script>
+</body>
+
+</html>
