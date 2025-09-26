@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Button</title>
+    <script src="https://kit.fontawesome.com/898d462de4.js" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            max-width: 700px;
+            width: 100%;
+            margin: 50px auto;
+            border: 1px solid #d8d8d8;
+            border-radius: 15px;
+            padding: 1.5rem;
+            font: 1.2em/1.5 arial, sans-serif;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Mission 01 하위요소선택자(공백) : .container의 모든 문단태그<p> 태그는 글자색을 "#a8a8a8"로 지정 */
+        .container p {
+            color: #a8a8a8
+        }
+
+        /* Mission 02 자식요소선택자(>) : .container의 자식요소 <p>태그에만 글자를 굵게 font-weight:600 */
+        .container>p {
+            font-weight: 600
+        }
+
+        /* Mission 03 자식요소선택자(>) : p태그의 child요소 <strong>에만 컬러를 'olive'로 지정 */
+        .container p>strong {
+            color: olive
+        }
+
+        /* Mission 04 형제요소선택자(+) : <span>태그 바로뒤에 있는 <p>태그에만 테두리 지정 border:1px dashed #d8d8d8 */
+        .container span+p {
+            border: 1px dashed #d8d8d8;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: #f3f3f3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit quod quas laudantium, temporibus nostrum
+                soluta laborum sed unde minus corporis ab eveniet nobis porro et facere praesentium voluptates ducimus
+                perferendis.
+                Dolorum, animi cupiditate, nesciunt necessitatibus beatae sit a laudantium odit molestiae et aspernatur
+                sint expedita esse inventore facilis sequi <span><strong>Hello</strong><i>World</i></span>tempora cum ea
+                dolorem sunt, eius veniam. Fuga rerum aperiam esse!
+                Officiis deserunt vero odit sapiente asperiores nesciunt! Pariatur saepe eligendi necessitatibus minima
+                qui suscipit molestias ab voluptatem hic nostrum est blanditiis expedita omnis, fuga temporibus iusto
+                tenetur placeat autem incidunt!
+            </p>
+        </section>
+        <p>
+            <strong>Quaerat</strong> dolor quasi quos dolorem qui magnam. Enim ratione distinctio reiciendis fugit
+            dolorem nihil eveniet vitae, laudantium ipsum nostrum aperiam facere quam tenetur, perferendis debitis
+            reprehenderit culpa rerum cum aspernatur!
+            Assumenda, quod eveniet. Enim nobis eum ipsam sunt, quis nisi repellendus quae adipisci ducimus voluptatem!
+            Ea numquam magnam rerum commodi, velit obcaecati rem perspiciatis corrupti mollitia, error facere laudantium
+            accusantium.
+        </p>
+        <span>Span Great world</span>
+        <p>
+            Dolorem a sapiente consequatur laudantium fuga esse provident nisi enim doloribus magnam aut quo deleniti
+            odio minima, optio qui nesciunt exercitationem quibusdam ullam alias reprehenderit neque odit nulla totam?
+            Corporis?
+            Eveniet, veniam cum beatae minus asperiores animi explicabo illum laudantium? Totam eligendi corporis at
+            illo optio temporibus mollitia inventore dolorum voluptatibus, excepturi explicabo minus vero ullam neque
+        </p>
+        <p>
+            Maxime fugit illum sunt veniam accusamus doloremque nostrum error. Et laboriosam ducimus soluta, adipisci
+            undeest, nihil sequi alias beatae facilis, magni voluptate modi nisi ex! Cum debitis explicabo vel?
+        </p>
+        <strong>Hello world</strong>
+    </div>
+
+</body>
+
+</html>

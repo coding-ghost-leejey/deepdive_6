@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 트리구조 익히기 + 셀렉터이해하기</title>
+    <style>
+        div {
+            padding: 1rem;
+        }
+
+        .grand-parent {
+            outline: 2px solid tomato;
+            width: 300px;
+        }
+
+        /* 공백은 하위요소 선택자 */
+        .grand-parent span {
+            background-color: gold;
+        }
+
+        /* > 꺽쇠는 자식요소 선택자 */
+        .grand-parent>span {
+            color: tomato;
+            font-size: 2em;
+        }
+
+        .grand-parent div {
+            font-style: italic;
+        }
+
+        /* '+' 형제요소 선택자 */
+        /* .parent 뒤에 형제요소 div를 선택 */
+        .parent+div {
+            background-color: gray;
+        }
+
+        .parent {
+            outline: 2px solid olive;
+        }
+
+        .child {
+            outline: 2px solid dodgerblue;
+        }
+
+        /* 줄복사 : option + shift + 아래방향키(또는 위) */
+        /* 줄이동 : option + 위,아래 방향키 */
+    </style>
+</head>
+
+<body>
+    <div class="grand-parent">
+        Grand parent
+        <span>SPAN 1</span>
+        <div class="parent">
+            Parent
+            <div class="child">
+                Child
+            </div>
+            <div class="second-child">
+                Second-child
+                <span>SPAN</span>
+            </div>
+        </div>
+        <div class="parent">
+            Parent
+            <div class="child">
+                Child
+            </div>
+            <div class="second-child">
+                Second-child
+                <span>SPAN</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

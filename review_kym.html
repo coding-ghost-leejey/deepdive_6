@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0eaa369e1a.js" crossorigin="anonymous"></script>
+    <title>Button</title>
+    <style>
+        body {
+            font-family: 'arial', sans-serif;
+        }
+
+        .open-popup {
+            display: block;
+            background-color: #ffffff;
+            /* ff ff ff -> #fff, 33 99 66 -> #369 */
+            width: 300px;
+            /* box-sizing: border-box; */
+            /* height: 100px; */
+            border-radius: 10px;
+            border: 2px solid black;
+            box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
+            /* cursor: pointer; a태그는 기본 Pointer */
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        .popup-container {
+
+
+            width: 350px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            position: fixed;
+            right: 50px;
+            top: 100px;
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#" class="open-popup">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Button</span>
+    </a>
+
+    <section class="popup-container">
+        <button type="button" class="close-popup">
+            <span>팝업창 닫기</span>
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </section>
+
+    <script>
+        const openBtn = document.querySelector('.open-popup')
+        const popup = document.querySelector('.popup-container')
+        const closepopup = document.querySelector('.close-popup')
+
+        openBtn.addEventListener('click', () => {
+            console.log('clicked!')
+            popup.style.display = "block"
+
+
+        })
+
+        closepopup.addEventListener('click', () => {
+            popup.style.display = "none"
+
+
+        })
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>
