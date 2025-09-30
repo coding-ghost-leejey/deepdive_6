@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .container {
+            width: 70%;
+            /* parent elelment size */
+            border: 1px solid tomato;
+            height: 300px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .thumb {
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+
+        .thumb img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .thumb:hover img {
+            scale: 1.2;
+            rotate: 5deg;
+            /* 1.2배 키우기 and 5degree 회전, transform:scale(1.2) rotate(5deg) */
+        }
+
+        .circle-test div {
+            width: 200px;
+            height: 80px;
+            background-color: tomato;
+            margin: 20px;
+            /* top right bottom left */
+        }
+
+        .circle-test .circle-a {
+            border-radius: 40px;
+        }
+
+        .circle-test .circle-b {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="circle-test">
+        <div class="circle-a">
+            A
+        </div>
+        <div class="circle-b">
+            B
+        </div>
+    </section>
+    <div class="thumb">
+        <img src="./images/card_thumb_0.jpg" alt="illust">
+    </div>
+    <div class="container">
+        <p>
+            Once upon a time, in a quiet forest, a tiny squirrel dreamed of reaching the highest tree. Every morning, it
+            gathered courage, stepping higher and higher, never giving up on its dream.
+        </p>
+
+        <img src="./images/body-bg.jpg" alt="">
+        <img src="./images/ghost_n1.png" alt="">
+
+        <p>
+            In a village by the river, a little girl found a golden feather. She wondered if it belonged to a magical
+            bird. Each night, she held it close, waiting for the bird to return for it.
+        </p>
+
+        <p>
+            Far across the sea, a young fox built a boat of leaves and flowers. With stars guiding its way, it sailed
+            bravely through the night, hoping to find friends on distant, unknown shores.
+        </p>
+
+    </div>
+
+    <h1>Hello World</h1>
+</body>
+
+</html>
