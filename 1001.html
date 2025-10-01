@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 이해하기</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 300px;
+            outline: 1px solid red;
+            margin: 100px auto;
+            /* 상하 좌우 */
+            display: flex;
+            justify-content: space-between;
+            /* 메인축의 아이템 정렬 */
+            align-items: center;
+            /* stretch 기본값 : 부모의 높이만큼 늘리기 */
+
+            /* flex-direction: column; */
+            /* main 축을 변경, 기본값 row */
+        }
+
+        .a {
+            background-color: tomato;
+        }
+
+        .b {
+            background-color: olive;
+        }
+
+        .c {
+            background-color: dodgerblue;
+        }
+
+        .btn-top {
+            width: 50px;
+            height: 50px;
+            background-color: tomato;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--     
+        a태그가 크기를 가지지 못하는 이유 -> 인라인요소(display:inline)
+        inline요소
+        1. 크기를 가지지못한다.
+        2. 상하여백을 가지지못한다.(padding,margin) 
+    -->
+    <a href="#" class="btn-top">
+        TOP
+    </a>
+
+    <div class="container">
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+    </div>
+    <div class="container">
+        <span class="box a">Hello</span>
+        <span class="box b">B</span>
+        <span class="box c">C</span>
+    </div>
+</body>
+
+</html>

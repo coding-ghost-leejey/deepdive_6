@@ -4,20 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Naver-join</title>
     <style>
-        div {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 5px solid;
-            border-image: linear-gradient(301deg, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%) 1;
+        /* div는 block level 요소라서 width, height 지정 가능 */
+        /* span은 inline 요소라서 width, height 지정 불가 */
+
+        body {
+            font-family: 'Apple SD Gothic Neo';
+            margin: 20px;
+            padding: 0;
+            background-color: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        section {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        section header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        section header h2 {
+            font-size: 1rem;
+            margin: 0;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        section header h2 strong {
+            font-weight: bold;
+            color: #09aa5c;
+        }
+
+        section header h2 span {
+            font-weight: 700;
+        }
+
+        section header h2 a {
+            font-size: 0.85rem;
+            text-decoration: none;
+            ;
+            color: #818288;
+            font-weight: 500;
+        }
+
+        section header h2 a:hover {
+            cursor: pointer;
+        }
+
+        section header>a {
+            font-size: 0.85rem;
+            display: inline-flex;
+            /* 아이콘과 텍스트 나란히 */
+            text-decoration: none;
+            color: #2d2d2d;
+            background: #fff;
+            font-weight: 500;
+            ;
+            gap: 6px;
+            padding: 6px 14px;
+            /* 버튼여백 */
+            border: 1px solid #a3a5a8;
+            border-radius: 9999px;
+        }
+
+        section header>a:hover {
+            text-decoration: underline;
+        }
+
+        .scroll-area {
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 15px;
+            height: 180px;
+            overflow-y: auto;
+            background: #fdfdfd;
+            ;
+        }
+
+        .scroll-area h3 {
+            margin-top: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #111827;
         }
     </style>
 </head>
 
 <body>
-    <div>a</div>
+    <h1>Naver 회원가입 - 약관동의</h1>
+    <section>
+        <header>
+            <!-- flex 연습하기-->
+            <h2>
+                <strong>[필수]</strong>
+                <span>개인정보 수집 및 이용</span>
+                <a href="#">전체</a>
+            </h2>
+            <a href="#">
+                🧒🏻 어린이용 안내
+            </a>
+        </header>
+
+        <div class="scroll-area">
+            <p>
+                개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목,
+                개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시
+                불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+            </p>
+
+            <h3>1. 수집하는 개인정보</h3>
+            <p>
+                이용자는 회원가입을 하지 않아도 정보 검색, 뉴스 보기 등 대부분의 네이버 서비스를
+                회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더, 카페, 블로그 등과 같이
+                개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 네이버는 서비스
+                이용을 위해 필요한 최소한의 개인정보를 수집합니다.
+            </p>
+        </div>
+    </section>
+
 </body>
 
 </html>
