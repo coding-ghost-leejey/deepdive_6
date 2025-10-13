@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        html {
+            font-size: 14px;
+        }
+
+        div {
+            width: 50vw;
+            height: 80vh;
+            background-color: gold;
+            font-size: 50px;
+        }
+
+        h1 {
+            background-color: tomato;
+            width: 50%;
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 5vw;
+            /* 태블릿세로, 모바일기준에서 사용추천 */
+            color: green;
+        }
+
+        span {
+            font-size: 2rem;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heading 1<span>Mango</span></h1>
+    <p>
+        Hello <span>World</span>
+    </p>
+    <span>
+        SPAN <span>Banana</span>
+    </span>
+
+    <div>
+        <h1>H1 - in Div</h1>
+        <span>SPAN in Div</span>
+    </div>
+
+    <hr>
+    픽셀(px) -> 고정값
+    --- 상대값(가변크기) ----
+    퍼센트(%) -> 부모를 기준(크기, 글자크기)
+    em -> 부모의 글자크기를 기준
+    rem -> ROOT의 글자크기를 기준
+    vw, vh -> view port 기준
+</body>
+
+</html>
