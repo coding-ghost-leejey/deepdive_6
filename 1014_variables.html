@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1014_variables.html</title>
+    <style>
+        :root {
+            --red: #772222;
+            --blue: #2a7b9b;
+            --purple: #a053ed;
+            --gold: #FADB43;
+            --gra1: linear-gradient(90deg, #2a7b9b 0%, #a053ed 100%);
+            --gra2: radial-gradient(circle, var(--gold), var(--purple) 100%);
+            --text-l: 30px;
+            --text-m: 24px;
+            --text-s: 14px;
+        }
+
+        .box1 {
+            background-color: var(--red)
+        }
+
+        .box2 {
+            color: var(--blue);
+            font-size: var(--text-l);
+            background-image: var(--gra2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">Hello world</div>
+    <div class="box2">Hello world</div>
+    <script>
+        // 1. 변수선언(const) : box라는 변수에 위의 div 요소를 담으시오. querySelector 사용
+        const apple = document.querySelector('.box')
+        // 2. css변경 : box요소의 글자색을 tomato로 변경하기
+        apple.style.color = 'tomato' 
+    </script>
+</body>
+
+</html>

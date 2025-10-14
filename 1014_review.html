@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units Review</title>
+    <style>
+        .container {
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 1rem;
+            /* 16px */
+        }
+
+        p {
+            font-size: 1em;
+            /* 30px */
+        }
+
+        span {
+            font-size: 0.5em;
+        }
+
+        b,
+        h1 {
+            background-color: tomato;
+            color: #fff;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        img {
+            width: 300px;
+        }
+    </style>
+    <script>
+        /**
+         * 인라인블럭요소의 특징
+         * 인라인요소에 속하나, 블럭요소의 성질을 가질 수 있다.
+         * display:inline-block
+         * */
+
+
+        /**
+         * 인라인요소의 특징
+         * 크기를 가질 수 없다
+         * 상하 여백을 가질 수 없다.
+         * 내부에 어떠한 블럭요소도 컨텐츠요소로 포함할 수 없다.
+         * display:inline
+         * 
+         * 
+         * 블럭요소의 특징
+         * 크기와 상하여백모두를 가질수있고,
+         * 내부에 인라인요소를 컨텐츠요소로 포함할수 있다.
+         * display:block
+         * */
+
+        /**
+         * 
+         * 헤딩요소(h1~h6),p태그 내부에는 어떠한 블럭요소도
+         * 컨텐츠요소로 올수 없다.
+         * 
+         * */
+    </script>
+</head>
+
+<body>
+    <!-- 아래 3개의 'World'의 글자크기는 몇 픽셀일까? -->
+    <img src="./images/ghost_n1.png" alt="">
+    <img src="./images/ghost_n2.png" alt="">
+    <img src="./images/ghost_n3.png" alt="">
+
+    <div class="container">
+        <h1>Hello <span>1. World</span></h1>
+        <p>Hello <span>2. World</span></p>
+        <span>
+            Hello <span>3. World</span>
+        </span>
+        <b>
+            Hello World
+        </b>
+        <i>
+            Italic Tag
+        </i>
+        <div>End LINE</div>
+    </div>
+
+    <span>
+        <h1>Hello world</h1> <!-- error -->
+    </span>
+    <a href="#">
+        <h1>Hello world</h1>
+    </a>
+    <h1>
+        <p>Hello world</p><!-- error -->
+    </h1>
+    <p> <!-- error -->
+    <h1>Hello world</h1>
+    </p>
+    <div>
+        <p>Hello world</p>
+    </div>
+</body>
+
+</html>

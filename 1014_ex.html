@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable 연습</title>
+    <style>
+        :root {
+            --color-primary: #4caf50;
+            --color-body: #e8e8e8;
+            --color-text: #222;
+            --text-large: 1.5rem;
+            --radius-s: 8px;
+
+        }
+
+        body {
+            background-color: var(--color-body);
+            color: var(--color-text);
+            transition: 0.4s;
+        }
+
+        button {
+            color: #fff;
+            border: 2px solid var(--color-text);
+            height: 40px;
+            padding: 0 1.5rem;
+            /* 배경색, 글자크기, 모서리둥글기를 변수로 선언하기 */
+            background-color: var(--color-primary);
+            font-size: var(--text-large);
+            border-radius: var(--radius-s);
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="toggle">
+        Toggle Dark Mode
+    </button>
+    <!--
+        :root 전역변수선언에 사용되는 선택자
+        변수이름은 반드시 --로 시작
+        변수호출은 var() 함수사용
+    -->
+    <script>
+        const btn = document.getElementById('toggle');
+        let isDark = false; // light mode
+
+
+        btn.addEventListener('click', () => {
+            isDark = !isDark // isDark의 결과를 반대로 넣는다. !-> 부정연산자 NOT
+            console.log('isDark : ', isDark)
+            document.documentElement.style.setProperty('--color-body', isDark ? '#222' : '#e8e8e8')
+            document.documentElement.style.setProperty('--color-text', isDark ? '#e8e8e8' : '#222')
+        })
+    </script>
+</body>
+
+</html>
