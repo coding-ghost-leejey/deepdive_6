@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빽틱기호 사용법</title>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <div class="container">
+        <button type="button" id="btn-minus">-</button>
+        <span id="num">0</span>
+        <button type="button" id="btn-plus">+</button>
+    </div>
+    <script>
+        const a = 'javascript';
+        const b = 'html';
+        let count = 0
+
+        // const result = a + '는 ' + b + '보다 어렵다, 현재 숫자는 ' + count + ' 이다'
+
+        const result = `${a}는 ${b}보다 어렵다, 현재 카운트는 ${count}이다.`
+        console.log(result)
+
+        const decrease = document.getElementById('btn-minus')
+        const increase = document.getElementById('btn-plus')
+        const num = document.getElementById('num')
+
+        // 선행 미션 : Span태그의 '0' 숫자를 'hello'라고 변경하기
+        // 10 -> num.textContent = 'hello'
+
+        decrease.addEventListener('click', () => {
+            count = count - 1;
+            num.textContent = count;
+        })
+
+        increase.addEventListener('click', () => {
+            count = count + 1;
+            num.textContent = count;
+        })
+
+
+    </script>
+</body>
+
+</html>
