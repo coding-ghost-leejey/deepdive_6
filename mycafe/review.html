@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Basic</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/review.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cappuchino Latte</h1>
+        <h2>부드러운 거품의 카푸치노를 만나보세요</h2>
+
+        <p class="price">0</p>
+
+        <h3>수량을 선택하세요</h3>
+        <div class="count-container">
+            <button type="button" id="decrease">-</button>
+            <span id="number">1</span>
+            <button type="button" id="increase">+</button>
+        </div>
+
+        <button type="button" id="order">Add to Order</button>
+
+        <div class="total-container">
+            <h4>Total price</h4>
+            <strong id="price-total">0</strong>
+        </div>
+    </div>
+
+    <script>
+        // DOM 요소 선언
+        const decrease = document.getElementById('decrease');
+        const increase = document.getElementById('increase');
+        const number = document.getElementById('number');
+        const price = document.querySelector('.price');
+        const totalPrice = document.getElementById('price-total');
+        const order = document.getElementById('order');
+
+        // 카푸치노 제품 정보
+        const MIN_COUNT = 1; // 최소수량  
+        const MAX_COUNT = 10; // 최대수량
+        const unitPrice = 4500; // 개당 단가
+        let count = MIN_COUNT; // 초기수량
+
+        // 문서  Render update
+        price.textContent = unitPrice;
+        number.textContent = count;
+        totalPrice.textContent = unitPrice * count;
+
+
+        function checkRange(calcNumber) {
+            const isMinOver = count <= MIN_COUNT;
+            const isMaxOver = count >= MAX_COUNT;
+            decrease.disabled = isMinOver;
+            increase.disabled = isMaxOver;
+
+            if (isMinOver || isMaxOver) return;
+
+            count = count + calcNumber;
+            console.log('count : ', count)
+            number.textContent = count;
+        }
+
+        decrease.addEventListener('click', () => { checkRange(-1) });
+        increase.addEventListener('click', () => { checkRange(1) });
+        order.addEventListener('click', () => {
+            totalPrice.textContent = count * unitPrice;
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Basic</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cappuchino Latte</h1>
+        <h2>부드러운 거품의 카푸치노를 만나보세요</h2>
+
+        <p class="price">0</p>
+
+        <h3>수량을 선택하세요</h3>
+        <div class="count-container">
+            <button type="button" id="decrease">-</button>
+            <span id="number">1</span>
+            <button type="button" id="increase">+</button>
+        </div>
+
+        <button type="button" id="order">Add to Order</button>
+
+        <div class="total-container">
+            <h4>Total price</h4>
+            <strong id="price-total">0</strong>
+        </div>
+    </div>
+
+    <script>
+        // 변수초기화
+        const decrease = document.getElementById('decrease');
+
+        /** 변수초기화 힌트 - 아래부분을 참조하여 위에 적어보세요 
+         *  const increase = 여기에 플러스 버튼을 불러오세요
+         *  const unitPrice = 한개당 단가를 표시하는 p태그를 불러오세요
+         *          document.querySelector('.price')
+         *                    <p class="price">0</p>
+         * 
+         *  const totalPrice = 여기에 최종금액 strong태그를 불러오세요
+         *                     <strong id="price-total">4500</strong>
+         * 
+         * 
+         *  const order = 여기에 'Add to Order' 버튼태그를 불러오세요 
+         *                 <button type="button" id="order">Add to Order</button>
+         * 
+         * 
+         * const num = 여기에 선택한 수량을 나타내는 태그를 불러오세요
+         *             <span id="number">1</span>
+         * 
+         * let price = 4500; 기본가격을 세팅하세요 
+         * let count = 1; 수량을 초기화 하세요
+         * 
+         * 
+         * 
+         * */
+
+        // 문서 초기화 - 아래 우측주석문 부분에 코드를 작성하세요
+        totalPrice.textContent = // 문서로딩시 처음에 나올 토탈가격
+        unitPrice.textContent =// 위의 변수에서 지정된 기본단가
+        num.textContent = // 위의 변수에서 지정된 기본수량 출력
+
+
+        // 수량카운트
+        decrease.addEventListener('click', () => {
+           // 여기에 코드를 작성하세요
+        })
+        increase.addEventListener('click', () => {
+            // 여기에 코드를 작성하세요
+        })
+
+        // 주문하기 버튼 클릭시 계산하기
+        order.addEventListener('click', () => {
+            // price와 count수량을 곱하여 총액 계산
+            // 계산한 값을 totalPrice에 뿌려주기 
+            // 위의 로직을 여기에 구현하세요
+        })
+    </script>
+</body>
+
+</html>

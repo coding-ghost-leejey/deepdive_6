@@ -1,91 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>siwon_toons</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <style>
-        :root {
-            --color-primary: #050028;
-        }
-
-        body {
-            background-image: url("images/full_bg_h2.jpg");
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-        }
-
-        header {
-            position: relative;
-
-        }
-
-        h1 {
-            position: absolute;
-            left: 30px;
-            top: 50%;
-            /* 본인 크기의 50%만큼 위로 이동 - 정중앙 배치 */
-            transform: translateY(-50%);
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            color: var(--color-primary);
-            font-weight: bold;
-        }
-
-        nav {
-            height: 80px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            color: white;
-        }
-
-        nav a {
-            transition: 0.4s;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: gold;
-            transition: 0.5s;
-        }
-
-        nav a:hover {
-            color: gold;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-    </style>
-
+    <title>아이스크림 만들기 함수 예제</title>
 </head>
 
 <body>
-    <header>
-        <h1>
-            SIWON<br>WEBTOON
-        </h1>
-        <nav>
-            <a href="#">COMPANY</a>
-            <a href="#">CAREERS</a>
-            <a href="#">CONTACT</a>
-            <a href="#">MEDIA</a>
-            <a href="#">IMPACT</a>
-        </nav>
-    </header>
+    <h1>아이스크림 만들기</h1>
+
+    <p id="hi">무엇을 할까요?</p>
+
+    <h3>1단계: 인사하기</h3>
+    <button onclick="sayHello('지윤')">인사하기</button>
+    <hr>
+
+    <h3>2단계: 아이스크림 고르기</h3>
+    <button onclick="chooseIcecream('바닐라')">🍦 바닐라</button>
+    <button onclick="chooseIcecream('딸기')">🍓 딸기</button>
+    <button onclick="chooseIcecream('초코')">🍫 초코</button>
+    <hr>
+
+    <h3>3단계: 시럽 고르기</h3>
+    <button onclick="addSyrup('딸기', 2000)">딸기시럽 (2,000원)</button>
+    <button onclick="addSyrup('초코', 2500)">초코시럽 (2,500원)</button>
+    <button onclick="addSyrup('바닐라', 3000)">바닐라시럽 (3,000원)</button>
+    <hr>
+
+    <h3>4단계: 총액 계산</h3>
+    <button onclick="showTotal(syrupPrice, 1)">1개 구매</button>
+    <button onclick="showTotal(syrupPrice, 2)">2개 구매</button>
+    <button onclick="showTotal(syrupPrice, 3)">3개 구매</button>
+
+    <p id="result">총액이 여기에 표시됩니다.</p>
+    <hr>
+
+    <h3>5단계: 완성하기</h3>
+    <button onclick="completeOrder()">주문 완료</button>
+
+    <script>
+        let user = '';
+        let icecream = '';
+        let syrup = '';
+        let syrupPrice = 0;
+        let count = 0;
+        let total = 0;
+
+        const hi = document.getElementById('hi')
+
+        function printMessage(message) {
+            hi.textContent = message
+        }
+
+        function sayHello(name) {
+            const text = `안녕하세요, ${name}님! 아이스크림을 골라주세요.`
+            printMessage(text)
+        }
+
+        function chooseIcecream(flavor) {
+            const text = `${flavor} 아이스크림을 선택하셨습니다! 이제 시럽을 골라볼까요?`
+            printMessage(text)
+        }
+
+        function addSyrup(syrup, price) {
+            const text = `${syrup} 시럽을 추가했습니다! (단가: ${price}원),이제 수량을 선택해서 총액을 확인해보세요.`;
+            printMessage(text)
+        }
+
+        function showTotal(price, countNum) {
+            const message = `상품 단가는 ${price}원, 수량은 ${countNum}개, 총액은 ${price * countNum}원입니다.`;
+            document.getElementById('result').textContent = message;
+            document.getElementById('step').textContent =
+                `총액이 계산되었습니다! 주문 완료 버튼을 눌러주세요.`;
+        }
+
+        function completeOrder() {
+            const text = `${user}님! 주문하신 ${icecream} 아이스크림 + ${syrup} 시럽 ${count}개가 완성되었습니다.
+        총 결제 금액은 ${total}원입니다. 감사합니다!`;
+            printMessage(text)
+        }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: gold
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .a {
+            background-color: gold
+        }
+
+        .b {
+            background-color: dodgerblue
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mission -->
+    A 버튼 클릭시 A박스의 글자변경 -> Hello -> textContent, innerHTML, innerText
+    B 버튼 클릭시 B박스의 글자변경 -> World
+
+    A완료시 -> 완료되신분은 Good-morning 인사!
+    <hr>
+
+    <h1 onclick="changeTextA()">헤딩요소</h1>
+    <button type="button" id="btn-a" onclick="changeText(boxA, 'hello')">클릭버튼 A</button>
+    <button type="button" id="btn-b" onclick="changeText(boxB, 'world')">클릭버튼 B</button>
+    <hr>
+    <div class=" box a">A</div>
+    <div class="box b">B</div>
+
+    <script>
+        // 변수초기화
+        const btnA = document.getElementById('btn-a')
+        const btnB = document.querySelector('#btn-b')
+        const boxA = document.querySelector('.a')
+        const boxB = document.querySelector('.b')
+
+
+        // btnA.addEventListener('click', () => {
+        //     boxA.textContent = 'Hello'
+        // })
+
+        // btnB.addEventListener('click', () => {
+        //     boxB.textContent = 'World'
+        // })
+
+        function changeTextA() {
+            boxA.textContent = 'Hello'
+        }
+        function changeTextB() {
+            boxB.textContent = 'World'
+        }
+
+        function changeText(target, text) {
+            target.textContent = text;
+        }
+
+
+        function makeIcecream(syrup) {
+            // 아이스크림 만드는 로직
+            return syrup + 'icecream'
+        }
+
+        console.log(makeIcecream('딸기'))
+        console.log(makeIcecream('쵸코'))
+        console.log(makeIcecream('바닐라'))
+        console.log(makeIcecream('땅콩')) 
+    </script>
+
+
+</body>
+
+</html>

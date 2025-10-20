@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --color-primary: #6a59c6;
+            --color-primary-shadow: rgba(31, 15, 60, 0.3);
+        }
+
+        body {
+            background-color: var(--color-primary);
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 0 20px var(--color-primary-shadow);
+            border: 1px solid var(--color-primary);
+            border-radius: 10px;
+            padding: 2em;
+            width: 450px;
+            margin: 100px auto;
+        }
+
+        p {
+            cursor: pointer;
+        }
+
+        p::before {
+            content: '-';
+            margin-right: 10px;
+        }
+
+        p:hover {
+            color: var(--color-primary)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>What's your favorite fruit?</h1>
+        <p class="a1">Grape</p>
+        <p class="a2">Apple Mango</p>
+        <p class="a3">Watermelon</p>
+        <p class="a4">Orange</p>
+
+        <div>
+            당신이 선택하신 과일은 <span id="result">OOO</span>입니다.
+        </div>
+    </div>
+
+    <script>
+        const a1 = document.querySelector('.a1')
+        const a2 = document.querySelector('.a2')
+        const a3 = document.querySelector('.a3')
+        const a4 = document.querySelector('.a4')
+
+        function printFruit(fruit) {
+            
+        }
+    </script>
+</body>
+
+</html>

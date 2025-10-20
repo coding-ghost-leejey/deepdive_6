@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  /* 크기계산에 대한 리셋 */
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  background-color: transparent; /* 투명 */
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+/* 글자 굵게나오는 태그 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: inherit;
+}
+
+i,
+em {
+  font-style: inherit;
+}
