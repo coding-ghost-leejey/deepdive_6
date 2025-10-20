@@ -25,7 +25,7 @@ function getCircleArea2(radius) {
 
 // 03 - 3번째 방법
 function getCircleArea3(radius) {
-  const area = 3.141592653589793 * radius ** radius;
+  const area = 3.141592653589793 * radius * radius;
   return `원의 넓이는 ${area} 입니다`;
 }
 
