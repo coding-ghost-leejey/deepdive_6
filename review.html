@@ -1,84 +1,94 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>아이스크림 만들기 함수 예제</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function practice</title>
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        span {
+            font-size: 20px;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>아이스크림 만들기</h1>
-
-    <p id="hi">무엇을 할까요?</p>
-
-    <h3>1단계: 인사하기</h3>
-    <button onclick="sayHello('지윤')">인사하기</button>
+    <h1>아이스크림 주문하기</h1>
+    <h2>매장에서 드시고 가시나요, 테이크아웃하시나요?<span id="choose-area"></span></h2>
+    <button type="button" onclick="chooseArea('먹고가기')">먹고가기</button>
+    <button type="button" onclick="chooseArea('포장하기')">포장하기</button>
+    <h3>아이스크림 선택하기<span id="choose-icecream"> - 선택한 아이스크림</span></h3>
+    <button type="button" onclick="chooseIcecream('바닐라', 3000)">바닐라</button>
+    <button type="button" onclick="chooseIcecream('초코', 3500)">초코</button>
+    <button type="button" onclick="chooseIcecream('딸기', 3500)">딸기</button>
+    <button type="button" onclick="chooseIcecream('바나나', 3500)">바나나</button>
+    <h4>수량을 선택하세요</h4>
+    <div class="count-container">
+        <button type="button" id="decrease">-</button>
+        <span id="number">1</span>
+        <button type="button" id="increase">+</button>
+    </div>
     <hr>
-
-    <h3>2단계: 아이스크림 고르기</h3>
-    <button onclick="chooseIcecream('바닐라')">🍦 바닐라</button>
-    <button onclick="chooseIcecream('딸기')">🍓 딸기</button>
-    <button onclick="chooseIcecream('초코')">🍫 초코</button>
+    <button type="button" onclick="check()">주문서 확인</button>
+    <div class="check-container">
+        <h1>메뉴 : <span id="menu-flavor"></span></h1>
+        <h2>가격 : <span id="menu-price"></span></h2>
+        <h3>수량 : <span id="menu-count"></span></h3>
+        <h4>금액 : <span id="menu-total"></span></h4>
+    </div>
     <hr>
-
-    <h3>3단계: 시럽 고르기</h3>
-    <button onclick="addSyrup('딸기', 2000)">딸기시럽 (2,000원)</button>
-    <button onclick="addSyrup('초코', 2500)">초코시럽 (2,500원)</button>
-    <button onclick="addSyrup('바닐라', 3000)">바닐라시럽 (3,000원)</button>
-    <hr>
-
-    <h3>4단계: 총액 계산</h3>
-    <button onclick="showTotal(syrupPrice, 1)">1개 구매</button>
-    <button onclick="showTotal(syrupPrice, 2)">2개 구매</button>
-    <button onclick="showTotal(syrupPrice, 3)">3개 구매</button>
-
-    <p id="result">총액이 여기에 표시됩니다.</p>
-    <hr>
-
-    <h3>5단계: 완성하기</h3>
-    <button onclick="completeOrder()">주문 완료</button>
+    <h5>포인트 적립하시나요?</h5>
+    <button type="button" onclick="yesClick('네')">네</button>
+    <button type="button" onclick="noClick('아니요')">아니요</button>
+    <br><span id="accumulate"></span>
 
     <script>
-        let user = '';
-        let icecream = '';
-        let syrup = '';
-        let syrupPrice = 0;
-        let count = 0;
-        let total = 0;
+        let count = 1
+        let selectedFlavor = ''
+        let selectedPrice = 0
+        const decrease = document.getElementById('decrease')
+        const increase = document.getElementById('increase')
+        const num = document.getElementById('number')
 
-        const hi = document.getElementById('hi')
-
-        function printMessage(message) {
-            hi.textContent = message
+        function chooseIcecream(flavor, price) {
+            selectedFlavor = flavor
+            selectedPrice = price
+            const icecreamName = ' - ' + flavor + '아이스크림'
+            document.getElementById('choose-icecream').textContent = icecreamName;
         }
-
-        function sayHello(name) {
-            const text = `안녕하세요, ${name}님! 아이스크림을 골라주세요.`
-            printMessage(text)
+        function chooseArea(place) {
+            const chooseArea = ' - ' + place
+            document.getElementById('choose-area').textContent = chooseArea
         }
-
-        function chooseIcecream(flavor) {
-            const text = `${flavor} 아이스크림을 선택하셨습니다! 이제 시럽을 골라볼까요?`
-            printMessage(text)
+        function check() {
+            document.getElementById('menu-flavor').textContent = selectedFlavor + ''
+            document.getElementById('menu-price').textContent = selectedPrice + '원'
+            document.getElementById('menu-count').textContent = count + '개'
+            document.getElementById('menu-total').textContent = (selectedPrice * count) + '원'
         }
-
-        function addSyrup(syrup, price) {
-            const text = `${syrup} 시럽을 추가했습니다! (단가: ${price}원),이제 수량을 선택해서 총액을 확인해보세요.`;
-            printMessage(text)
+        function yesClick() {
+            let point = count * 50
+            document.getElementById('accumulate').textContent = `${point}포인트 적립되었습니다!`
         }
-
-        function showTotal(price, countNum) {
-            const message = `상품 단가는 ${price}원, 수량은 ${countNum}개, 총액은 ${price * countNum}원입니다.`;
-            document.getElementById('result').textContent = message;
-            document.getElementById('step').textContent =
-                `총액이 계산되었습니다! 주문 완료 버튼을 눌러주세요.`;
+        function noClick() {
+            document.getElementById('accumulate').textContent = '적립이 취소되었습니다.'
         }
-
-        function completeOrder() {
-            const text = `${user}님! 주문하신 ${icecream} 아이스크림 + ${syrup} 시럽 ${count}개가 완성되었습니다.
-        총 결제 금액은 ${total}원입니다. 감사합니다!`;
-            printMessage(text)
-        }
+        decrease.addEventListener('click', () => {
+            count = count - 1;
+            console.log(count)
+            num.textContent = count
+        })
+        increase.addEventListener('click', () => {
+            count = count + 1;
+            console.log(count)
+            num.textContent = count
+        })
     </script>
 </body>
 
