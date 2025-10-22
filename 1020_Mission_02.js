@@ -31,6 +31,8 @@ function isWeekend(week) {
   return `입력하신 ${week}요일은, ${isWeekend} 입니다.`;
 }
 
+
+
 const answers = [
   getRectPerimeter(20, 30),
   checkPass(70),
