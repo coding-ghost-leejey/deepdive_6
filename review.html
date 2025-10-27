@@ -9,34 +9,20 @@
 </head>
 
 <body>
-
-    <h1 onclick="console.log('Hello world')">Function review</h1>
-    <button type="button" id="btn1">딸기</button>
-    <button type="button" onclick="makeMuffin('오렌지')">오렌지</button>
-    <p id="msg"></p>
+    <h1>Review.html</h1>
     <script>
-
-        const btn1 = document.getElementById('btn1')
-        const msg = document.getElementById('msg')
-
-        btn1.addEventListener('click', () => {
-            makeMuffin('딸기')
-        })
-
-        function makeMuffin(fruit) {
-            msg.textContent = `${fruit} 머핀이 만들어졌습니다`
+        const scores = [90, 86, 76, 45, 66];
+        let result = '';
+        for (const score of scores) {
+            if (score >= 80) {
+                result = "합격";
+            } else {
+                result = "불합격";
+            }
+            console.log(`${score}점은 ${result}입니다.`);
         }
+        // 이건 왜 오류가 뜨나요??
 
-
-
-        function makeIcecream(syrup, topping) {
-            const result = `${topping}이 토핑된 ${syrup} 아이스크림`
-            return result;
-        }
-
-        console.log(makeIcecream('choco', '땅콩슬라이스'))
-        console.log(makeIcecream('strawberry', '피스타치오'))
-        console.log(makeIcecream('pinnut', '레인보우'))
     </script>
 </body>
 
