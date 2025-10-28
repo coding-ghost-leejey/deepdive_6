@@ -4,24 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>function practice</title>
-
+    <title>Input 요소 제어하기</title>
+    <link rel="stylesheet" href="1027_02.css">
 </head>
 
 <body>
-    <h1>Review.html</h1>
+    <div class="container">
+        <input type="number" id="num1" placeholder="숫자를 입력하세요" min="1" max="100">
+        +
+        <input type="number" id="num2" placeholder="숫자를 입력하세요" min="1" max="100">
+        =
+        <span id="result">0</span>
+        <button type="button" id="btn">계산하기</button>
+        <hr>
+        <span id="error"></span>
+    </div>
+
     <script>
-        const scores = [90, 86, 76, 45, 66];
-        let result = '';
-        for (const score of scores) {
-            if (score >= 80) {
-                result = "합격";
-            } else {
-                result = "불합격";
+        const num1 = document.getElementById('num1')
+        const num2 = document.getElementById('num2')
+        const result = document.getElementById('result')
+        const error = document.getElementById('error')
+        const btn = document.getElementById('btn')
+
+        btn.addEventListener('click', () => {
+            const n1 = Number(num1.value)
+            const n2 = Number(num2.value)
+
+            if (n1 < 1 || n1 > 100 || n2 < 1 || n2 > 100 || isNaN(n1) || isNaN(n2)) {
+                error.textContent = "1 ~ 100 사이의 숫자만 입력가능합니다."
+                result.textContent = "오류"
             }
-            console.log(`${score}점은 ${result}입니다.`);
-        }
-        // 이건 왜 오류가 뜨나요??
+            else {
+                const sum = n1 + n2
+                result.textContent = sum
+                error.textContent = ''
+            }
+
+            console.log(`첫번째 값${n1},두번째 값${n2}`)
+            console.log(`데이터 타입${typeof n1}`)
+        })
+
+        // Step 01 - 두수의 합을 구하시오
+        // Step 02 - 조건 : 1~100까지만 입력이 되도록, "1~100까지의 수만 입력하세요"
+        // Step 03 - 1~100의 범위를 벗어난 숫자를 입력하면, 버튼 클릭시 결과대신 '오류메세지'를 출력하세요
+        // 예시 ) "1 ~ 100 사이의 숫자만 입력가능합니다. 
 
     </script>
 </body>

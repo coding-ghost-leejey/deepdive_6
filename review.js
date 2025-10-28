@@ -1,5 +1,7 @@
-const isRaining = true;
-const hasUmbrella = false;
-if (isRaining && !hasUmbrella) {
-  console.log("비를 맞습니다");
-}
+const words = ["hamburger", "milk", "coffee", "juice", "chocolate cookie"];
+
+words.forEach((word) => {
+  if (word.length >= 6) {
+    console.log(word);
+  }
+});
